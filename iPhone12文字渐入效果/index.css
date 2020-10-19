@@ -1,0 +1,50 @@
+:root{
+  --percentage:0%;
+}
+
+
+/* body{
+  background-color: #000000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+} */
+body{
+  background-color: #000000;
+  margin: 0;
+  height: 300vh; 
+}
+.sticky{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  font-family:Helvetica;
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  color: #fff;
+  letter-spacing: -0.3px;
+  background-image: linear-gradient(75deg,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 33.33%,rgba(255,255,255,0) 66.67%,rgba(255,255,255,0) 100%);
+  background-size: 300% 100%;/* 将背景的渐进颜色拉到三倍宽度 */
+  /* 这里设置为0的话可以看到文字被颜色完全覆盖（相当于渐进层背景有0到33.33%这一段颜色）
+   ，设置为50%就是33.33%到66.67%之间的这段背景颜色
+   100%的话就是66.67%到100%这段背景颜色
+   所以将这个值动态设置就可以形成渐变动画了
+   */
+  background-position-x: calc(100% - var(--percentage));
+  background-clip: text;/* 设置背景的颜色的范围，就只在text的轮廓中，其余的部分就会被裁掉 */
+  -webkit-background-clip:text;
+  color: transparent;
+  /* transition: 1.5s background-position-x ease-in-out; */
+}
+/* h1:hover{
+  background-position-x: 0%;
+
+} */
