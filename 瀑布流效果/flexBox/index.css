@@ -1,0 +1,53 @@
+body{
+  margin: 4px;
+  font-family:Helvetica;
+}
+.masonry{
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  height: 1000px;/* 设置竖向高度，当图片高度超过就会换行 */
+}
+.item{
+  position: relative;
+  width: 25%;
+  padding: 2px;
+  box-sizing: border-box;
+  counter-increment: item-counter;/* 计数器递增的 */
+}
+
+.item img{
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+.item::after{
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  background-color: #aaa;
+  color:#fff;
+  content:counter(item-counter);/* 计数器 */
+}
+/* 这里就可以使用order调整行列关系使其先从左往右在从上往下
+   但是缺点就是这个flex高度是固定的如果你调整宽度的话也会导致图片位置的移动，
+   所以还要计算整体的高度来设置宽度的分配
+*/
+.item:nth-child(4n+1){
+ order: 1;
+}
+.item:nth-child(4n+2){
+  order: 2;
+}
+.item:nth-child(4n+3){
+  order: 3;
+}
+.item:nth-child(4n+4){
+  order: 4;
+}

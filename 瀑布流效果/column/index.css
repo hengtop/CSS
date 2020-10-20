@@ -1,0 +1,36 @@
+/* 这就是用css column的方法写的简单瀑布流效果
+   但也有它的局限，就是如果你想让图片以一个新旧顺序来排列，比如现在是从上到下再从左往右，
+   但是我们像从左往右再总上到下这个就做不到了
+*/
+body{
+  margin: 4px;
+  font-family:Helvetica;
+}
+.masonry{
+  column-count: 4;/* 将div划分成四列*/
+  column-gap: 0;/* 指定列之间的0个像素的差距： */
+}
+.item{
+  padding: 2px;
+  position: relative;
+  counter-increment: item-counter;
+}
+.item img{
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+.item::after{
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  background-color: #aaa;
+  color:#fff;
+  content:counter(item-counter);
+}
