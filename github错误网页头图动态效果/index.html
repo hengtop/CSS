@@ -30,11 +30,15 @@
     </div>
   </div>
   <script>
-    document.querySelector('#parallax_wrapper').addEventListener('mousemove',function(e) {
+    document.querySelector('html').addEventListener('mousemove',function(e) {
+      
+      let window_width = document.documentElement.clientWidth;
+      let window_height = document.documentElement.clientHeight;//当前网页宽高
       let bgWidth = parseInt(getComputedStyle(document.querySelector('#parallax_wrapper')).width);
       let bgHeigth = parseInt(getComputedStyle(document.querySelector('#parallax_wrapper')).height);
-      let move_x = e.clientX / bgWidth;//计算比例
-      let move_y = e.clientY / bgHeigth;
+      let move_x = e.clientX / window_width;//计算比例
+      let move_y = e.clientY / window_height;
+      //给每个图片设置位移
       document.querySelector('#parallax_bg').style.transform = calcTransform(move_x,move_y,-5,-2);
       document.querySelector('#parallax_cat').style.transform = calcTransform(move_x,move_y,10,2);
       document.querySelector('#parallax_not_found').style.transform = calcTransform(move_x,move_y,15,2);
