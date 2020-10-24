@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="content">
+    <input type="checkbox">
+    <!-- 
+      svg 标签属性 widh和height属性表示画布大小
+      circle表示一个圆形
+                  fill表示没有填充颜色
+                  stroke表示边框颜色
+                  stroke-width表示边框粗细
+                  stroke-linecap表示线条边缘尽头处圆角处理
+                  cx表示原心的x坐标 cy表示圆心y坐标
+                  r表示半径
+      polyline表示多边形
+                  points表示多边形边的交点坐标
+                  stroke-linejoin表示交点处做圆角处理            
+     -->
+    <svg width="400" height="400">
+      <circle class="circle" fill="none" stroke="#68e534" stroke-linecap="round" stroke-width="20"
+       cx="200" cy="200" r="190" />
+       <polyline class="polyline" fill="none" stroke="#68e534" 
+        stroke-width="24" points="88,214 173,284 304,138"
+        stroke-linecap="round" stroke-linejoin="round"  
+       />
+    </svg>
+    <h2>支付成功</h2>
+  </div>
+</body>
+</html>

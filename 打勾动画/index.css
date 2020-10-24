@@ -1,0 +1,81 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.content{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h2{
+  font-family:Helvetica;
+  font-size: 40px;
+  color: #333;
+  margin-top: 50px;
+  opacity: 0;
+}
+/* 
+  stroke-dasharray 表示画虚线
+  如：stroke-dasharray = 10 表示：虚线长10，间距10，然后重复 虚线长10，间距10
+  两个参数或者多个参数时：一个表示长度，一个表示间距
+　　如：stroke-dasharray = '10, 5' 表示：虚线长10，间距5，然后重复 虚线长10，间距5
+　　如：stroke-dasharray = '20, 10, 5' 表示：虚线长20，间距10，虚线长5，接着是间距20，虚线10，间距5，之后开始如此
+  stroke-dashoffset 表示相对于起始点的偏移
+  这个属性要搭配stroke-dasharray才能看得出来效果，非虚线的话，是无法看出偏移的。
+*/
+.circle{
+  stroke-dasharray:1194;
+  stroke-dashoffset: 1194;
+  transform-origin:200px 200px;/* 变形中心 */
+  transform: rotate(-90deg);/* 2d旋转-90° */
+}
+.polyline{
+  stroke-dasharray:350;
+  stroke-dashoffset:350;
+  
+}
+input[type="checkbox"]{
+  margin-bottom: 20px;
+}
+input[type="checkbox"]:checked + svg .circle{
+  animation: round 1s ease-in-out;
+  animation-fill-mode: forwards;/* 动画完成定格 */
+}
+input[type="checkbox"]:checked + svg .polyline{
+  animation: line .8s ease-out;
+  animation-delay: .95s;/* 眼视开始动画 */
+  animation-fill-mode: forwards;
+}
+input[type="checkbox"]:checked ~ h2{
+  animation: title .6s ease-in-out;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+}
+/* 动画关键帧 */
+@keyframes round {
+  0%{
+    stroke-dashoffset: -1194;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes line {
+  0%{
+    stroke-dashoffset: 350;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes title {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
