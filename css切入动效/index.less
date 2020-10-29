@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.img-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    flex: 1;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  li::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./img/Aimer.png);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* less循环 */
+.for-loop(@index) when (@index > 1) {/* 设置变量循环终止条件 */
+
+  li:nth-child(@{index})::after {
+    left: calc(-10vw * calc(@index - 1))
+  }
+
+  .for-loop(@index - 1);/* 递归调用循环 */
+}
+
+.for-loop(10);/* 执行循环 */
+
+.for-loop1(@index1) when (@index1 > 0) {
+
+  li:nth-child(@{index1})::after {
+    transition: 1s transform ease-in-out;
+    transition-delay: calc(.06s * calc(@index1 - 1));
+  }
+
+  .for-loop1(@index1 - 1);
+}
+
+.for-loop1(10);
+
+/* 鼠标移入触发效果 */
+.img-wrapper:hover {
+  li::after {
+    transform: translateY(-100vh);
+  }
+}

@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+.img-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.img-wrapper li {
+  flex: 1;
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+}
+.img-wrapper li::after {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(img/Aimer.png);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* less循环 */
+/* 设置变量循环终止条件 */
+li:nth-child(10)::after {
+  left: calc(-10vw * calc(10 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(9)::after {
+  left: calc(-10vw * calc(9 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(8)::after {
+  left: calc(-10vw * calc(8 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(7)::after {
+  left: calc(-10vw * calc(7 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(6)::after {
+  left: calc(-10vw * calc(6 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(5)::after {
+  left: calc(-10vw * calc(5 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(4)::after {
+  left: calc(-10vw * calc(4 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(3)::after {
+  left: calc(-10vw * calc(3 - 1));
+}
+/* 设置变量循环终止条件 */
+li:nth-child(2)::after {
+  left: calc(-10vw * calc(2 - 1));
+}
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 递归调用循环 */
+/* 执行循环 */
+li:nth-child(10)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(10 - 1));
+}
+li:nth-child(9)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(9 - 1));
+}
+li:nth-child(8)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(8 - 1));
+}
+li:nth-child(7)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(7 - 1));
+}
+li:nth-child(6)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(6 - 1));
+}
+li:nth-child(5)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(5 - 1));
+}
+li:nth-child(4)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(4 - 1));
+}
+li:nth-child(3)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(3 - 1));
+}
+li:nth-child(2)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(2 - 1));
+}
+li:nth-child(1)::after {
+  transition: 1s transform ease-in-out;
+  transition-delay: calc(0.06s * calc(1 - 1));
+}
+/* 鼠标移入触发效果 */
+.img-wrapper:hover li::after {
+  transform: translateY(-100vh);
+}
